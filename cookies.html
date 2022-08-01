@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <head>
+        <title>Projeto Transversal de Redes 1</title>
+    </head>
+
+    <script>
+
+        function setCookie(){
+            document.cookie = "username= Samuel; expires=Tue, 02 Ago 2022 12:00:00 UTC";
+        }
+
+        function getCookie(){
+
+            let dados = document.cookie;
+
+            alert(dados);
+
+        }
+
+
+    </script>
+
+    <body>
+
+        <button onclick="setCookie()">Create Cookie</button>
+        <button onclick="getCookie()">Get Cookies</button>
+
+    </body>
+</html>
