@@ -4,26 +4,36 @@
     </head>
 
     <script>
-
+        // Função que cria um cookie do tipo texto com expiração
         function setCookie(){
+            // Geração do cookie
             document.cookie = "username= Samuel; expires=Tue, 02 Ago 2022 12:00:00 UTC";
         }
-
+        // Função para armazenar a informação do cookie em uma variável para ser usada na função de avaliação
         function getCookie(){
 
             let dados = document.cookie;
-
-            alert(dados);
-
+            // alert(dados);
+            return dados;
         }
 
+        function avalCookie(){
 
+            var text  = getCookie();
+            
+            var cleanText = text.split('=')[1];
+
+            if(cleanText === ""){
+                alert("O Website armazena seu nome de usuário, que é: " + cleanText)
+            }else{
+                alert("O Website não armazena informações em cookies");
+            }
+        }
     </script>
 
     <body>
-
         <button onclick="setCookie()">Create Cookie</button>
         <button onclick="getCookie()">Get Cookies</button>
-
+        <button onclick="avalCookie()">Avaliar</button>
     </body>
-</html>
+</html> 
