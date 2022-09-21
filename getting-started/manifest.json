@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "Save URL",
+  "description": "This extension saves the URL of the current tab in a variable",
+  "version": "1.0",
+  "content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com; object-src 'self';",
+  
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "cookies",
+    "*://*/*"
+  ]
+
+}

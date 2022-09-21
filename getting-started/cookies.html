@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+    <head>
+        <title>Projeto Transversal de Redes 1</title>
+    </head>
+
+    <style>
+        /* CSS */
+        .button-29 {
+        align-items: center;
+        appearance: none;
+        background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+        border: 0;
+        border-radius: 6px;
+        box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-family: "JetBrains Mono",monospace;
+        height: 48px;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        padding-left: 16px;
+        padding-right: 16px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s,transform .15s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: nowrap;
+        will-change: box-shadow,transform;
+        font-size: 18px;
+        }
+
+        .button-29:focus {
+        box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        }
+
+        .button-29:hover {
+        box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+        transform: translateY(-2px);
+        }
+
+        .button-29:active {
+        box-shadow: #3c4fe0 0 3px 7px inset;
+        transform: translateY(2px);
+        }
+
+
+    </style>
+
+    <script>
+        // Criação dos Arrays com os tipos de dados
+        // var characters = ["Samuel", "Vinicius", "Victor"];
+        // var outputstring  = characters.join(" | ");
+        
+        // Função que cria um cookie do tipo texto com expiração
+        function setCookie(){
+            // Geração do cookie
+            document.cookie = "username= lucas; expires=Tue, 30 Ago 2022 12:00:00 UTC";
+            console.log(document.cookie);
+        }
+        // Função para armazenar a informação do cookie em uma variável para ser usada na função de avaliação
+        function getCookie(){
+
+            let dados = document.cookie;
+            // alert(dados);
+            return dados;
+        }
+
+        function avalCookie(){
+
+            let users = [];
+            let split = [];
+            let username;
+
+            let name = [];
+
+        /*
+            var characters = ["Samuel", "Vinicius", "Victor"];
+            console.log(characters);
+
+            var outputstring  = characters.join(" | ");
+
+        */
+            var text = getCookie(); 
+
+            console.log("Retorno do getcookie:" + text); //controle
+
+            var separa = text.split('='); // amrazena texto separado na vriável separa
+            
+            console.log("Texto separado:" + separa); //controle
+
+            split.push(separa[0]);  // armazena username no array split
+            split.push(separa[1]);  // armazena o nome do usuário no array split
+
+            name.push(separa[1]); // array para armzenar o nome do usuário e verificar se o site armazena o nome do usuário
+
+            console.log("Conteúdo array split: " + split); //controle 1
+
+            name.push(separa[1]); // controle 2
+
+            console.log("Tamanho array split: " + split.length); // controle 3
+        
+            for(let i=0;i<split.length;i++){
+                if(split[i]==="username"){
+                    username = split[i + 1];
+                    users.push(username)[i];
+                }
+            }
+            
+            console.log("Conteúdo array users: " + users); //controle 1
+
+            var cleanText = text.split('=')[1];
+            console.log("Cookie limpo: " + cleanText);
+
+            
+            // if(cleanText === ""){
+            //     alert("O Website armazena seu nome de usuário, que é: " + cleanText);
+            // }else{
+            //     alert("O Website não armazena informações em cookies");
+            // }
+
+            if (name.includes(cleanText)) {                        // se o nome do usuário estive no array de controle, ele informa que o site armazena nome de usuário
+                console.log('✅ String is contained in Array');
+                alert("O Website armazena seu nome de usuário");
+            } else {
+                console.log('⛔️ String is NOT contained in Array');
+                alert("O Website não armazena informações de usuário");
+            }
+
+        }
+
+        // function findString(){
+
+        //     var cookieString = avalCookie();
+
+        //     alert("Texto limpo na string" + cookieString);
+
+        //     // var index, value, result;
+        //     // for (index = 0; index < outputstring.length; ++index) {
+        //     //     value = outputstring[index];
+        //     //     if (value.substring(0, 3) === "id-") {
+        //     //         // You've found it, the full text is in `value`.
+        //     //         // So you might grab it and break the loop, although
+        //     //         // really what you do having found it depends on
+        //     //         // what you need.
+        //     //         result = value;
+        //     //         break;
+        //     //     }
+        //     // }
+
+        // }
+
+    </script>
+
+    <body>
+        <button onclick="setCookie()" class="button-29" role="button">Create Cookie</button>
+        <button onclick="getCookie()" class="button-29" role="button">Get Cookies</button>
+        <button onclick="avalCookie()" class="button-29" role="button">Avaliar</button>
+    </body>
+</html> 
